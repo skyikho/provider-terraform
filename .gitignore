@@ -8,10 +8,6 @@ terraform.tfstate
 bin/
 modules-dev/
 /pkg/
-website/.vagrant
-website/.bundle
-website/build
-website/node_modules
 .vagrant/
 *.backup
 ./*.tfstate
@@ -26,8 +22,6 @@ website/node_modules
 *.iml
 binary/
 test/
-
-website/vendor
 
 # Test exclusions
 !command/test-fixtures/**/*.tfstate
