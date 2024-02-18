@@ -1,5 +1,3 @@
-variable region {}
-
 # resource "ncloud_vpc" "vpc"
 #(Optional)생성할 VPC의 이름. 생략되면 Terraform이 임의의 고유한 이름을 할당
 variable vpc_name {}
