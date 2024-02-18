@@ -9,9 +9,3 @@ output "vpc_cidr" {
   value       = ncloud_vpc.vpc.ipv4_cidr_block
   sensitive   = false
 }
-
-output "zone_list" {
-  description = "Ncloud KR Zone list"
-  value       = data.ncloud_zones.zones.output_file
-  sensitive   = false
-}

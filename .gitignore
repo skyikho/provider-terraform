@@ -3,6 +3,7 @@
 .DS_Store
 example.tf
 terraform.tfvars
+terraform.tfvars.json
 terraform.tfplan
 terraform.tfstate
 bin/
