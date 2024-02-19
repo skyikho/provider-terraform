@@ -91,3 +91,9 @@ output "ncloud_nks_cluster_acg_no" {
   value       = ncloud_nks_cluster.terraform_cluster.acg_no
   sensitive   = false
 }
+
+output "ncloud_nks_kube_config" {
+  description = "Provides a kubeconfig from Kubernetes Service cluster."
+  value       = data.ncloud_nks_kube_config.kube_config.client_certificate
+  sensitive   = false
+}
