@@ -35,6 +35,3 @@ variable "cluster_type" {}
 variable "cluster_zone" {}
 #(Optional)k8s버전 1.26.10-nks.1, 1.27.9-nks.1 두가지 가능
 variable "k8s_version" {}
-
-
-variable "cluster_uuid" {}

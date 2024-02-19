@@ -1,3 +1,4 @@
+
 data "ncloud_nks_kube_config" "kube_config" {
-  cluster_uuid = var.cluster_uuid
+  cluster_uuid = ncloud_nks_cluster.terraform_cluster.uuid
 }
