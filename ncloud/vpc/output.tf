@@ -29,6 +29,32 @@ output "ncloud_nks_cluster_endpoint" {
   sensitive   = false
 }
 
+output "ncloud_nks_cluster_private_node_subnet_name" {
+  description = "private_node_subnet.. name"
+  value       = ncloud_subnet.private_node_subnet.name
+  sensitive   = false
+}
+output "ncloud_nks_cluster_private_node_subnet_zone" {
+  description = "private_node_subnet.. zone"
+  value       = ncloud_subnet.private_node_subnet.zone
+  sensitive   = false
+}
+output "ncloud_nks_cluster_private_node_subnet_subnet" {
+  description = "private_node_subnet.. subnet"
+  value       = ncloud_subnet.private_node_subnet.subnet
+  sensitive   = false
+}
+output "ncloud_nks_cluster_private_node_subnet_subnet_type" {
+  description = "private_node_subnet.. subnet_type"
+  value       = ncloud_subnet.private_node_subnet.subnet_type
+  sensitive   = false
+}
+output "ncloud_nks_cluster_private_node_subnet_usage_type" {
+  description = "private_node_subnet.. usage_type"
+  value       = ncloud_subnet.private_node_subnet.usage_type
+  sensitive   = false
+}
+
 output "ncloud_nks_cluster_lb_private_subnet_name" {
   description = "Subnet name. for private loadbalancer only.."
   value       = ncloud_subnet.private_lb_subnet.name
