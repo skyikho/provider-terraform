@@ -29,15 +29,15 @@ output "ncloud_nks_cluster_endpoint" {
   sensitive   = false
 }
 
-output "ncloud_nks_cluster_lb_private_subnet_no" {
-  description = "Subnet No. for private loadbalancer only.."
-  value       = ncloud_nks_cluster.terraform_cluster.lb_private_subnet_no
+output "ncloud_nks_cluster_lb_private_subnet_name" {
+  description = "Subnet name. for private loadbalancer only.."
+  value       = ncloud_subnet.private_lb_subnet.name
   sensitive   = false
 }
 
-output "ncloud_nks_cluster_lb_public_subnet_no" {
-  description = "Subnet No. for public loadbalancer only. (Supported on public, gov site)"
-  value       = ncloud_nks_cluster.terraform_cluster.lb_public_subnet_no
+output "ncloud_nks_cluster_lb_public_subnet_name" {
+  description = "Subnet name. for public loadbalancer only. (Supported on public, gov site)"
+  value       = ncloud_subnet.public_lb_subnet.name
   sensitive   = false
 }
 
@@ -92,8 +92,8 @@ output "ncloud_nks_cluster_acg_no" {
   sensitive   = false
 }
 
-output "ncloud_nks_kube_config" {
-  description = "Provides a kubeconfig from Kubernetes Service cluster."
-  value       = data.ncloud_nks_kube_config.kube_config.client_certificate
+output "ncloud_nks_kube_config_host" {
+  description = "Host on kubeconfig."
+  value       = data.ncloud_nks_kube_config.kube_config.host
   sensitive   = false
 }
