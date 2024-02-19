@@ -26,3 +26,12 @@ variable "pub_lb_subnet" {}
 variable "pub_lb_zone" {}
 variable "pub_lb_subnet_type" {}
 variable "pub_lb_usage_type" {}
+
+#(Required)클러스터 이름
+variable "cluster_name" {}
+#(Required)클러스터 유형. 노드의 최대 개수에 따라 다름(10개 또는 50개). 현재 10개로 설정
+variable "cluster_type" {}
+#(Required)zone 코드
+variable "cluster_zone" {}
+#(Optional)k8s버전 1.26.10-nks.1, 1.27.9-nks.1 두가지 가능
+variable "k8s_version" {}

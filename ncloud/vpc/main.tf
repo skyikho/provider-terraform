@@ -34,3 +34,20 @@ resource "ncloud_subnet" "public_lb_subnet" {
   subnet_type    = var.pub_lb_subnet_type
   usage_type     = var.pub_lb_usage_type
 }
+
+resource "ncloud_login_key" "loginkey" {
+  key_name = "${terraform.workspace}-${var.cluster_name}"
+}
+
+resource "ncloud_nks_cluster" "terraform_cluster" {
+  name                 = "${terraform.workspace}-${var.cluster_name}"
+  cluster_type         = var.cluster_type
+  login_key_name       = ncloud_login_key.loginkey.key_name
+  lb_private_subnet_no = ncloud_subnet.private_lb_subnet.id            #(Required)비공개 로드 밸런서 전용 서브넷 번호
+  lb_public_subnet_no  = ncloud_subnet.public_lb_subnet.id
+  #(Optional)공용 로드 밸런서 전용 서브넷 번호. (public site의 KR, SG, JP 지역에서 필수)
+  subnet_no_list       = [ncloud_subnet.private_node_subnet.id]        #(Required)서브넷 번호 목록
+  vpc_no               = ncloud_vpc.vpc.id                  #(Required)VPC 번호
+  zone                 = var.cluster_zone
+  k8s_version          = var.k8s_version
+}
