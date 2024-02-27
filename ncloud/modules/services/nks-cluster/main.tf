@@ -6,7 +6,7 @@ resource "ncloud_vpc" "vpc" {
 resource "ncloud_subnet" "node_subnet" {
   vpc_no         = ncloud_vpc.vpc.id
   subnet         = var.pri_node_subnet
-  name           = "${terraform.workspace}-node_subnet"
+  name           = "${terraform.workspace}-node-subnet"
   zone           = var.pri_node_zone
   network_acl_no = ncloud_vpc.vpc.default_network_acl_no    #(Required) Network ACL의 ID
   subnet_type    = "PRIVATE"
@@ -25,7 +25,7 @@ resource "ncloud_subnet" "private_lb_subnet" {
 
 # TODO: PUBLIC LB 서브넷 생성 확인 필요.
 resource "ncloud_subnet" "public_lb_subnet" {
-  name           = "${terraform.workspace}-public_lb_subnet"
+  name           = "${terraform.workspace}-public-lb-subnet"
   vpc_no         = ncloud_vpc.vpc.id
   subnet         = var.pub_lb_subnet
   zone           = var.pub_lb_zone

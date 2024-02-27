@@ -66,24 +66,6 @@ variable "pub_lb_zone" {
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
 # ---------------------------------------------------------------------------------------------------------------------
-variable "pub_lb_subnet_type" {
-  description = "Internet connectivity. If you use PUBLIC all VMs created within Subnet will be assigned a certified IP by default and will be able to communicate directly over the Internet. Considering the characteristics of Subnet, you can choose Subnet for the purpose of use. Accepted values: PUBLIC (Public) | PRIVATE (Private)."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# OPTIONAL PARAMETERS
-# These parameters have reasonable defaults.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pub_lb_usage_type" {
-  description = "Usage type, Default GEN. Accepted values: GEN (General) | LOADB (For LoadBalancer) | BM (For BareMetal) |NATGW (for NATGateway)."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_name" {
   description = "Cluster name."
   type        = string

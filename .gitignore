@@ -6,6 +6,7 @@ terraform.tfvars
 terraform.tfvars.json
 terraform.tfplan
 terraform.tfstate
+.terraform.lock.hcl
 bin/
 modules-dev/
 /pkg/
