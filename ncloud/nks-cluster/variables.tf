@@ -2,35 +2,102 @@
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
 # ---------------------------------------------------------------------------------------------------------------------
+variable vpc_cidr {
+  description = "The CIDR block of the VPC. The range must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
+  type        = string
+}
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pri_node_subnet" {
+  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pri_node_zone" {
+  description = "Available zone where the subnet will be placed physically."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pri_lb_subnet" {
+  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pri_lb_zone" {
+  description = "Available zone where the subnet will be placed physically."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pub_lb_subnet" {
+  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
+variable "pub_lb_zone" {
+  description = "Available zone where the subnet will be placed physically."
+  type        = string
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_name" {
-  description = "Cluster name"
+  description = "Cluster name."
   type        = string
 }
 
-# 10 ea : SVR.VNKS.STAND.C002.M008.NET.SSD.B050.G002
-# 50 ea : SVR.VNKS.STAND.C004.M016.NET.SSD.B050.G002
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+#   * XEN / RHV
+#   * 10 ea : SVR.VNKS.STAND.C002.M008.NET.SSD.B050.G002
+#   * 50 ea : SVR.VNKS.STAND.C004.M016.NET.SSD.B050.G002
+# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_type" {
-  description = "Cluster type. Maximum number of node (10 ea , 50 ea)"
+  description = "Cluster type. Maximum number of nodes."
   type        = string
-  default     = "SVR.VNKS.STAND.C002.M008.NET.SSD.B050.G002"
 }
 
+
+# ---------------------------------------------------------------------------------------------------------------------
+# REQUIRED PARAMETERS
+# You must provide a value for each of these parameters.
+# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_zone" {
-  description = "zone Code"
+  description = "zone Code."
   type        = string
-  default     = "KR-1"
 }
-
-variable "k8s_version" {
-  description = "Kubenretes version"
-  type        = string
-  default     = "1.26.10-nks.1"
-}
-
-
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
-
+variable "k8s_version" {
+  description = "Kubenretes version. Only upgrade is supported."
+  type        = string
+}
