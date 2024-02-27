@@ -1,5 +1,5 @@
 module "nks_cluster" {
-  source = "../../../modules/services/nks-cluster"
+  source = "modules"
 
   # (parameters hidden for clarity)
 
