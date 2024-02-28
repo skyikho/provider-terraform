@@ -41,3 +41,8 @@ resource "ncloud_nks_node_pool" "node_pool" {
     max = var.autoscale_max
   }
 }
+
+data "ncloud_nks_node_pool" "node_pool"{
+  node_pool_name = var.node_pool_name
+  cluster_uuid   = var.cluster_uuid
+}
