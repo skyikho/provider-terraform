@@ -13,19 +13,19 @@ output "node_count" {
 
 output "node_autoscale_enabled" {
   description = "Auto scaling availability"
-  value       = data.ncloud_nks_node_pool.node_pool.autoscale[0].enable
+  value       = data.ncloud_nks_node_pool.node_pool.autoscale.enable
   sensitive   = false
 }
 
 output "node_autoscale_min" {
   description = "Minimum number of nodes available for auto scaling"
-  value       = data.ncloud_nks_node_pool.node_pool.autoscale[0].min
+  value       = data.ncloud_nks_node_pool.node_pool.autoscale.min
   sensitive   = false
 }
 
 output "node_autoscale_max" {
   description = "Maximum number of nodes available for auto scaling"
-  value       = data.ncloud_nks_node_pool.node_pool.autoscale[0].max
+  value       = data.ncloud_nks_node_pool.node_pool.autoscale.max
   sensitive   = false
 }
 
