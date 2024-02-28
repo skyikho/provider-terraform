@@ -11,16 +11,6 @@ variable vpc_cidr {
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
 # ---------------------------------------------------------------------------------------------------------------------
-variable "route_table_name" {
-  description = "The name to create. If omitted, Terraform will assign a random, unique name."
-  type        = string
-}
-
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_name" {
   description = "Cluster name."
   type        = string
