@@ -26,16 +26,6 @@ variable node_count {
   type        = number
 }
 
-# TODO : 옵션 확인
-# ---------------------------------------------------------------------------------------------------------------------
-# OPTIONAL PARAMETERS
-# These parameters have reasonable defaults.
-# ---------------------------------------------------------------------------------------------------------------------
-variable node_subnet_id {
-  description = ""
-  type        = string
-}
-
 # ---------------------------------------------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
