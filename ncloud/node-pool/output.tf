@@ -25,7 +25,7 @@ output "node_autoscale_min" {
 
 output "node_autoscale_max" {
   description = "Maximum number of nodes available for auto scaling"
-  value       = data.ncloud_nks_node_pool.node_pool.autoscale[*].max
+  value       = ncloud_nks_node_pool.node_pool.autoscale[*].max
   sensitive   = false
 }
 
