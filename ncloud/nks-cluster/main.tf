@@ -81,8 +81,10 @@ resource "ncloud_nks_cluster" "cluster" {
   vpc_no               = ncloud_vpc.vpc.id
   zone                 = var.cluster_zone
   k8s_version          = var.k8s_version
+  log {
+    audit = var.audit_enabled
+  }
 }
-
 
 data "ncloud_nks_kube_config" "kube_config" {
   cluster_uuid = ncloud_nks_cluster.cluster.uuid

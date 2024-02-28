@@ -38,6 +38,12 @@ variable "cluster_zone" {
   type        = string
 }
 
+variable audit_enabled {
+  description = "Audit log availability"
+  default     = false
+  type        = bool
+}
+
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
