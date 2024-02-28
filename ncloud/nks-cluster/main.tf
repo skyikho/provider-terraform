@@ -1,4 +1,5 @@
 resource "ncloud_vpc" "vpc" {
+  name            = "${var.cluster_name}-vpc"
   ipv4_cidr_block = var.vpc_cidr
 }
 
@@ -71,7 +72,7 @@ resource "ncloud_login_key" "loginkey" {
 }
 
 resource "ncloud_nks_cluster" "cluster" {
-  name                 = "${terraform.workspace}-${var.cluster_name}"
+  name                 = var.cluster_name
   cluster_type         = var.cluster_type
   login_key_name       = ncloud_login_key.loginkey.key_name
   lb_private_subnet_no = ncloud_subnet.private_lb_subnet.id
