@@ -7,60 +7,15 @@ variable vpc_cidr {
   type        = string
 }
 
-
 # ---------------------------------------------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
 # You must provide a value for each of these parameters.
 # ---------------------------------------------------------------------------------------------------------------------
-variable "pri_node_subnet" {
-  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
+variable "route_table_name" {
+  description = "The name to create. If omitted, Terraform will assign a random, unique name."
   type        = string
 }
 
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pri_node_zone" {
-  description = "Available zone where the subnet will be placed physically."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pri_lb_subnet" {
-  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pri_lb_zone" {
-  description = "Available zone where the subnet will be placed physically."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pub_lb_subnet" {
-  description = "assign some subnet address ranges within the range of VPC addresses, must be between /16 and/28 within the private band (10.0.0/8,172.16.0.0/12,192.168.0.0/16)."
-  type        = string
-}
-
-# ---------------------------------------------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
-# You must provide a value for each of these parameters.
-# ---------------------------------------------------------------------------------------------------------------------
-variable "pub_lb_zone" {
-  description = "Available zone where the subnet will be placed physically."
-  type        = string
-}
 
 # ---------------------------------------------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
